@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\About;
+use App\Mail\AboutMail;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\TryCatch;
+use Illuminate\Support\Facades\Mail;
 
 class AboutController extends Controller
 {
@@ -110,13 +112,14 @@ class AboutController extends Controller
     public function saveApi(Request $request)
     {
         $data = $request->all();
+        //dd($data);
         try {
-            
             About::insert($data);
+            Mail::to($data["email"])->send(new AboutMail($data));
         } catch (\Throwable $th) {
             return response()->json(["message"=> "Se genero un error {$th->getMessage()}"],404);
         }
-        return response()->json(["message"=> "Se genero un error "],201);
+        return response()->json(["message"=> "Se creo el registro con exito "],201);
     }
 
 
