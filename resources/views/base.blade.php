@@ -32,7 +32,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route("about.index")}}">
                                     <span data-feather="file"></span>
-                                    Abouts
+                                    Lista
                                 </a>
                             </li>
                         </ul>
