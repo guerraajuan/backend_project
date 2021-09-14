@@ -6,8 +6,9 @@
     <title>Mensaje Recibido con exíto</title>
 </head>
 <body>
-    <p style="color: rebeccapurple">Hola! {{ $about_mail["name"] }}</p>
-    <p>mensaje recibido:{{ $about_mail["message"] }}</p>
-    <p>mensaje recibido:{{ $about_mail["phone"] }}</p>
+    <p >Hola! {{ $about_mail["name"] }}</p>
+    <p>Hemos recibido tus datos, nuestro esquipo se pondra en contacto contigo por el numero: {{$about_mail["phone"]}}</p>
+    <p>Gracias por preferirnos!</p>
+   
 </body>
 </html>
